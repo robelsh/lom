@@ -19,7 +19,6 @@ class ViewController2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(level)
         updateLevel()
         // Do any additional setup after loading the view.
     }
@@ -62,8 +61,8 @@ class ViewController2: UIViewController {
         override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             // Get the new view controller using segue.destinationViewController.
             // Pass the selected object to the new view controller.
-                let svc = segue.destinationViewController as! ViewController;
-                svc.level = self.level
+            let svc = segue.destinationViewController as! ViewController;
+            svc.level = self.level
         }
 
 }

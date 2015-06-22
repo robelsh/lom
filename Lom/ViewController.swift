@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var timeStart: Bool = false
     var rand = Int(arc4random_uniform(10))
     var win : Bool = false
+    var newGame: Bool = true
     var compteur :Int = 0
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -26,7 +27,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(level)
         NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -78,8 +78,34 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startTimer(sender: UIButton) {
-        out.text = "Game Started !"
-        timeStart = true
+        timeStart = !timeStart
+        if(timeStart){
+            out.text = "Game Started !"
+            if(newGame){
+                switch level {
+                case 0:
+                    rand = Int(arc4random_uniform(10))
+                case 1 :
+                    rand = Int(arc4random_uniform(500))
+                case 2 :
+                    rand = Int(arc4random_uniform(1000))
+                case 3 :
+                    rand = Int(arc4random_uniform(5000))
+                case 4 :
+                    rand = Int(arc4random_uniform(10000))
+                default:
+                    break
+                }
+                newGame = false
+            }
+            print(rand)
+            timeStart = true
+        }
+        else{
+            timeStart = false
+            out.text = "Game Paused !"
+        }
+        
     }
     
     @IBAction func tryEntry(sender: UIButton) {
@@ -87,8 +113,9 @@ class ViewController: UIViewController {
             let myVar = Int(entry.text!)
             if(myVar != nil){
                 if plusOuMoins(myVar!){
-                    win = true
+                    timeStart = false
                     timerLabel.text = ""
+                    win = true
                     out.text = "WINNER in \(timerInt)"
 //                    self.view.addSubview(bgImage!)
                     timerInt=0
@@ -104,6 +131,15 @@ class ViewController: UIViewController {
         else{
             out.text = "Press Start"
             entry.text = ""
+        }
+    }
+    
+    @IBAction func restart(sender: UIButton) {
+        if(!timeStart){
+            timerLabel.text = ""
+            newGame = true
+            timerInt = 0
+            out.text = "Game Restarted !"
         }
     }
     
