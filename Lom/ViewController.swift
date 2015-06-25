@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var win : Bool = false
     var newGame: Bool = true
     var compteur :Int = 0
+    var score: [String:Double]!
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var out: UILabel!
@@ -28,6 +29,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        
+        //Try score
+        score = ["Jean Bon" : 30, "michel Seguin": 40]
+    
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -170,6 +175,7 @@ class ViewController: UIViewController {
         else if(segue.destinationViewController.isMemberOfClass(ViewController3)){
             let svc = segue.destinationViewController as! ViewController3;
             svc.level = self.level
+            svc.score = self.score
         }
     }
 

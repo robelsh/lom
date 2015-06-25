@@ -14,7 +14,7 @@ class ViewController2: UIViewController {
     //3 : Normal
     //4 : Hard
     var level: Int!
-    
+    var score: [String:Int]!
     @IBOutlet weak var levelLabel: UILabel!
     
     override func viewDidLoad() {
