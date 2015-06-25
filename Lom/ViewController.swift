@@ -162,8 +162,15 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let svc = segue.destinationViewController as! ViewController2;
-        svc.level = self.level
+        if(segue.destinationViewController.isMemberOfClass(ViewController2)){
+            let svc = segue.destinationViewController as! ViewController2;
+            svc.level = self.level
+        }
+        
+        else if(segue.destinationViewController.isMemberOfClass(ViewController3)){
+            let svc = segue.destinationViewController as! ViewController3;
+            svc.level = self.level
+        }
     }
 
 }
