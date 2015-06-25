@@ -16,12 +16,25 @@ class ViewController3: UIViewController {
     @IBOutlet weak var name1: UILabel!
     @IBOutlet weak var score2: UILabel!
     @IBOutlet weak var name2: UILabel!
+    @IBOutlet weak var score3: UILabel!
+    @IBOutlet weak var score4: UILabel!
+    @IBOutlet weak var score5: UILabel!
+    @IBOutlet weak var name3: UILabel!
+    @IBOutlet weak var name4: UILabel!
+    @IBOutlet weak var name5: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         levelLabel.text = "  Actual Level : \(level)"
-        
+        var dicName = [name1,name2,name3,name4,name5]
+        var dicScore = [score1,score2,score3,score4,score5]
+        var compteur:Int = 0
         for (cle, valeur) in score {
             print("cle \(cle) valeur \(valeur)")
+            dicName[compteur].text = cle
+            let score = valeur as NSNumber
+            dicScore[compteur].text = score.stringValue
+            compteur++
         }
         // Do any additional setup after loading the view.
     }
