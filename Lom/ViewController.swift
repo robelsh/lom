@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var win : Bool = false
     var newGame: Bool = true
     var compteur :Int = 0
-    var score: [String:Double]!
+    var score: [String:Float]!
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var out: UILabel!
@@ -121,6 +121,7 @@ class ViewController: UIViewController {
                     timeStart = false
                     timerLabel.text = ""
                     win = true
+                    score = ["test":timerInt]
                     out.text = "WINNER in \(timerInt)"
 //                    self.view.addSubview(bgImage!)
                     timerInt=0

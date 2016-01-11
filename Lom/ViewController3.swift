@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController3: UIViewController {
     var level: Int!
-    var score: [String:Double]!
+    var score: [String:Float]!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var score1: UILabel!
     @IBOutlet weak var name1: UILabel!
