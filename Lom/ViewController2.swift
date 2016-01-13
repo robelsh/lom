@@ -63,6 +63,7 @@ class ViewController2: UIViewController {
             // Pass the selected object to the new view controller.
             let svc = segue.destinationViewController as! ViewController;
             svc.level = self.level
+            svc.score = self.score
         }
 
 }

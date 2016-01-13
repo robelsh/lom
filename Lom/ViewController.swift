@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var win : Bool = false
     var newGame: Bool = true
     var compteur :Int = 0
-    var score: [String:Float]!
+    var score: [String:Float] = ["Jean Bon" : 30, "michel Seguin": 40]
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var out: UILabel!
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
         //Try score
-        score = ["Jean Bon" : 30, "michel Seguin": 40]
+        //score = ["Jean Bon" : 30, "michel Seguin": 40]
     
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -171,6 +171,7 @@ class ViewController: UIViewController {
         if(segue.destinationViewController.isMemberOfClass(ViewController2)){
             let svc = segue.destinationViewController as! ViewController2;
             svc.level = self.level
+            svc.score = self.score
         }
         
         else if(segue.destinationViewController.isMemberOfClass(ViewController3)){
