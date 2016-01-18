@@ -193,7 +193,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="entry" destination="xCP-Kw-vE4" id="wY9-oL-NVM"/>
                         <outlet property="out" destination="9Iz-qM-QK1" id="HH0-QP-UxV"/>
@@ -347,7 +346,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="levelLabel" destination="HoW-u0-KWL" id="eTW-lx-NBb"/>
                         <outlet property="name1" destination="5ON-Jx-W41" id="XWe-XN-1n3"/>
@@ -453,7 +453,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="levelLabel" destination="71q-pH-ikn" id="zup-gz-8rC"/>
                     </connections>
